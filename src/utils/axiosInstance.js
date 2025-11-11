@@ -4,7 +4,7 @@ import axios from "axios";
 console.log('API URL:', import.meta.env.VITE_API_URL);
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api', // fallback if env not loaded
+  baseURL: import.meta.env.VITE_API_URL , // fallback if env not loaded
   withCredentials: true,                 // send httpOnly cookies
   headers: {
     "Content-Type": "application/json",
