@@ -78,25 +78,32 @@ export default function Menu() {
       </div>
 
       {/* Menu Items */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {filteredItems.map((item) => (
-          <div
-            key={item._id}
-            className="bg-black/70 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-all duration-300 border border-amber-400"
-          >
-            <img
-              src={item.imageUrl}
-              alt={item.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-amber-500 text-lg font-semibold">{item.name}</h3>
-              <p className="text-gray-300 mt-1">{item.description}</p>
-              <p className="text-gray-300 mt-2 font-medium">${item.price}</p>
-            </div>
-          </div>
-        ))}
+      <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4">
+  {filteredItems.map((item) => (
+    <div
+      key={item._id}
+      className="flex-shrink-0 w-[80%] sm:w-[45%] md:w-[30%] lg:w-[22%]
+                 bg-black/70 rounded-xl overflow-hidden shadow-lg 
+                 border border-amber-400 hover:scale-105 transition"
+    >
+      <img
+        src={item.imageUrl}
+        alt={item.name}
+        className="w-full h-44 object-cover"
+      />
+
+      <div className="p-4">
+        <h3 className="text-amber-500 font-semibold">{item.name}</h3>
+
+        <p className="text-gray-300 text-sm line-clamp-2">
+          {item.description}
+        </p>
+
+        <p className="text-white mt-2 font-medium">${item.price}</p>
       </div>
+    </div>
+  ))}
+</div>
     </div>
   );
 }

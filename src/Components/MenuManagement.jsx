@@ -175,31 +175,31 @@ const groupedItems = menuItems.reduce((acc, item) => {
       {Object.keys(groupedItems).map((category) => (
         <div
           key={category}
-          className="mb-10 border border-amber-600/40 p-4 rounded-lg "
+          className="mb-10  p-4 rounded-lg "
         >
-          <h2 className="text-3xl font-serif  font-medium text-amber-400 mb-4">
+          <h2 className="text-4xl   font-bold text-amber-400 mb-4">
             {category}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
             {groupedItems[category].map((item) => (
               <div
                 key={item._id}
-                className="bg-gray-900 w-52 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow border border-amber-600 m-2"
+                className="bg-gray-900 w-72 h-auto rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow border border-amber-600 m-2"
               >
                 {item.imageUrl && (
                   <img
                     src={item.imageUrl}
                     alt={item.name}
-                    className=" h-24 w-full object-cover"
+                    className=" h-28 w-full object-cover"
                   />
                 )}
                 <div className="p-2">
                   <h3 className="text-lg font-bold text-amber-400">
                     {item.name}
                   </h3>
-                  <p className="text-gray-400 text-sm mt-1">
+                 <p className="text-gray-400 text-sm mt-1 line-clamp-3 hover:line-clamp-none transition-all">
                     {item.description}
-                  </p>
+                    </p>
                   <p className="text-amber-400 font-semibold mt-2">
                     ${item.price}
                   </p>
